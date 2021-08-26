@@ -1,0 +1,125 @@
+<div class='shadow'></div>
+<nav>
+  <div class='nav-wrapper'>
+    <a href='/' class='brand-logo'>Магазин курсов</a>
+    <button class='menu__icon icon-menu'>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class='main-nav menu-body'>
+      <ul class='right hide-on-med-and-down list'>
+
+        {{#if isAuth}}
+          {{! если страница true, рендерим одно, иначе без активного класса }}
+          {{#if isHome}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/'
+              >Главная</a></li>
+          {{else}}
+            <li class='list-item'><a class='list-link' href='/'>Главная</a></li>
+          {{/if}}
+
+          {{#if isCourses}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/courses'
+              >Курсы</a></li>
+          {{else}}
+            <li class='list-item'><a
+                class='list-link'
+                href='/courses'
+              >Курсы</a></li>
+          {{/if}}
+
+          {{#if isAdd}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/add'
+              >Добавить курс</a></li>
+          {{else}}
+            <li class='list-item'><a class='list-link' href='/add'>Добавить курс</a></li>
+          {{/if}}
+
+          {{! ссылка на корзину }}
+          {{#if isCard}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/card'
+              >Корзина</a></li>
+          {{else}}
+            <li class='list-item'><a
+                class='list-link'
+                href='/card'
+              >Корзина</a></li>
+          {{/if}}
+
+          {{! ссылка на заказы }}
+          {{#if isOrder}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/orders'
+              >Заказы</a></li>
+          {{else}}
+            <li><a class='list-link' href='/orders'>Заказы</a></li>
+          {{/if}}
+
+          {{! ссылка на profile }}
+          {{#if isProfile}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/profile'
+              >Профиль</a></li>
+          {{else}}
+            <li class='list-item'><a
+                class='list-link'
+                href='/profile'
+              >Профиль</a></li>
+          {{/if}}
+
+          <li class='list-item'><a
+              class='list-link'
+              href='/auth/logout'
+            >Выйти</a></li>
+        {{else}}
+          {{! если страница true, рендерим одно, иначе без активного класса }}
+          {{#if isHome}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/'
+              >Главная</a></li>
+          {{else}}
+            <li class='list-item'><a class='list-link' href='/'>Главная</a></li>
+          {{/if}}
+
+          {{#if isCourses}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/courses'
+              >Курсы</a></li>
+          {{else}}
+            <li class='list-item'><a
+                class='list-link'
+                href='/courses'
+              >Курсы</a></li>
+          {{/if}}
+
+          {{! ссылка на auth }}
+          {{#if isLogin}}
+            <li class='active list-item'><a
+                class='list-link'
+                href='/auth/login'
+              >Войти</a></li>
+          {{else}}
+            <li class='list-item'><a
+                class='list-link'
+                href='/auth/login'
+              >Войти</a></li>
+          {{/if}}
+        {{/if}}
+
+      </ul>
+    </div>
+  </div>
+</nav>
